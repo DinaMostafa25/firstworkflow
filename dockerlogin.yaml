@@ -1,4 +1,4 @@
-name: docker loginn
+name: docker login
 
 on:
   push:
