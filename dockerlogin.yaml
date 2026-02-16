@@ -1,0 +1,14 @@
+name: docker login
+
+on:
+  push:
+    brnaches: main
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: login to docker hub
+        uses: docker/login-active@v3
+        with:
+          user_name: ${{ vars.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
