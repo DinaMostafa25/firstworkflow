@@ -1,0 +1,24 @@
+name: dragonworkflow | shell script
+on:
+    push
+jobs:
+    Ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: install cowsay programe
+              run: sudo apt-get install cowsay -y
+            
+            - name: execute cowsay CMD
+              run: cowsay -f dragon "Run for cover, Iam a dragon...RAWR">> dragon.txt
+
+            - name: test file Exists
+              run: grep -i "dragon" dragon.txt
+            
+            - name: read file
+              run: cat dragon.txt
+
+            - name: checkout repo files
+              run: ls
+            
+
+
