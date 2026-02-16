@@ -11,8 +11,7 @@ jobs:
 
     steps:
         
-        - name: Show repository files
-          run: ls -la
+        
 
         - name: Checkout repository
           uses: actions/checkout@v4  

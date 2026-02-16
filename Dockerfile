@@ -20,6 +20,6 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 
 # Copy application file
-COPY app.py .
+COPY hellopython.py .
 
-ENTRYPOINT ["python3", "app.py"]
+ENTRYPOINT ["python3", "hellopython.py"]
