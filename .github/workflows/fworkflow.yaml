@@ -1,1 +1,18 @@
 
+name: dinafirstworkflow | shell script
+
+on:
+    push:
+        branches: main
+jobs:
+    f_job:
+        runs-on: ubuntu_latest
+        steps:
+
+            - name: list files
+              run : ls -ltra
+
+            - name: run shell script
+              run : echo "Hello!!!!!!!!!!!!!!!"
+
+
