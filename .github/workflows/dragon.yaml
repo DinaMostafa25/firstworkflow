@@ -19,6 +19,14 @@ jobs:
 
             - name: checkout repo files
               run: ls
-            
+
+            - name: upload dragon file 
+              uses: actions/upload-artifact@v6.0.0
+              with: 
+                name: dragon-file
+                path: dragon.txt
+
+
+
 
 
