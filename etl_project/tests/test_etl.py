@@ -14,7 +14,7 @@ def test_transform():
         "quantity": [2, None, 2],
         "unit_price": [10.0, 5.0, 10.0],
         "country": ["egypt", "usa", "egypt"],
-        "customer_name": ["Ali Ali", "Sara Ahmed", "Aya mostafa"]
+        "customer_name": ["Ali Ali", "Sara Ahmed", "Ali Ali"]
     })
 
     result = transform(input_data)
