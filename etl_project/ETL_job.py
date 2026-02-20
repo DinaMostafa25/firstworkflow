@@ -22,20 +22,31 @@ def transform(df):
     print("Start Transform.................")
 
     try:
-        df = df.drop_duplicates()
+      
+        
+        # Convert order_date to datetime and drop invalid ones
         df["order_date"] = pd.to_datetime(df["order_date"], errors="coerce")
-        df["quantity"] = df["quantity"].fillna(1).astype(int)
-        df["unit_price"] = df["unit_price"].fillna(0).astype(float)
+        df = df.dropna(subset=["order_date"])
 
-        df["total_price"] = df["quantity"] * df["unit_price"]
+        # Drop rows where quantity is null
+        df = df.dropna(subset=["quantity"])
 
+        # Remove duplicates
+        df = df.drop_duplicates()
+
+        # Clean country
         df["country"] = df["country"].str.upper()
+
+        # Clean customer name (title case)
         df["customer_name"] = df["customer_name"].str.title()
 
-        
+        # Create total_price column
+        df["total_price"] = df["quantity"] * df["unit_price"]
 
         print("DONE Transform")
+
         return df
+
 
     except Exception as e:
         print("Transform error!!!!!!!!!!!!!")
