@@ -70,5 +70,9 @@ if __name__ == "__main__":
     load(output)
     end_time = datetime.now()
 
+    
+
     print("ETL pipeline completed successfully")
     print("Time : ",  end_time - start_time)
+
+
