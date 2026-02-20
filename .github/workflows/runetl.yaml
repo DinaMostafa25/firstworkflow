@@ -11,6 +11,10 @@ jobs:
   run-etl:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: etl_project  
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,9 +31,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run ETL script
-        working-directory: etl_project
         run: python ETL_job.py
 
       - name: Run tests
-        working-directory: etl_project
         run: pytest tests/
